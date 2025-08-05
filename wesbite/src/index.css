@@ -23,6 +23,32 @@ body {
   min-height: 100vh;
 }
 
+/* Browser compatibility fixes */
+.flex {
+  display: flex !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .md\\:flex {
+    display: flex !important;
+  }
+  
+  .md\\:hidden {
+    display: none !important;
+  }
+}
+
+/* Ensure backdrop-filter works in older browsers */
+@supports not (backdrop-filter: blur(8px)) {
+  header {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -44,4 +70,11 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Fallback for browsers that don't support scroll-behavior */
+@supports not (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: auto;
+  }
 }
