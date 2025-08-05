@@ -29,7 +29,11 @@ export function Contact() {
     {
       icon: <Phone className="h-6 w-6 text-emerald-600" />,
       title: "Phone",
-      details: ["+353 87 270 9930"],
+      details: [
+        { name: "Garima Gupta", phone: "+353 87 270 9930" },
+        { name: "Patrick", phone: "+353 87 287 3200" },
+        { name: "Febi", phone: "+353 89 275 5350" }
+      ],
     },
     {
       icon: <Mail className="h-6 w-6 text-emerald-600" />,
@@ -63,35 +67,43 @@ export function Contact() {
                     {info.icon}
                   </div>
                   <h4 className="font-semibold text-gray-900 text-base">{info.title}</h4>
-                  {info.details.map((detail, detailIndex) => {
-                    if (info.title === "Phone") {
-                      return (
-                        <a
-                          key={detailIndex}
-                          href={`tel:${detail}`}
-                          className="text-gray-600 text-base leading-tight hover:text-emerald-600 transition-colors duration-200 underline"
-                        >
-                          {detail}
-                        </a>
-                      )
-                    } else if (info.title === "Email") {
-                      return (
-                        <a
-                          key={detailIndex}
-                          href={`mailto:${detail}`}
-                          className="text-gray-600 text-base leading-tight hover:text-emerald-600 transition-colors duration-200 underline"
-                        >
-                          {detail}
-                        </a>
-                      )
-                    } else {
-                      return (
-                        <p key={detailIndex} className="text-gray-600 text-base leading-tight">
-                          {detail}
-                        </p>
-                      )
-                    }
-                  })}
+                  {info.title === "Phone" ? (
+                    // Render phone numbers with names in a cleaner layout
+                    <div className="space-y-4 w-full">
+                      {info.details.map((detail, detailIndex) => (
+                        <div key={detailIndex} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                          <p className="text-gray-800 font-semibold text-sm mb-1">{detail.name}</p>
+                          <a
+                            href={`tel:${detail.phone}`}
+                            className="text-emerald-600 text-base font-medium hover:text-emerald-700 transition-colors duration-200 block"
+                          >
+                            {detail.phone}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    // Render other details as before
+                    info.details.map((detail, detailIndex) => {
+                      if (info.title === "Email") {
+                        return (
+                          <a
+                            key={detailIndex}
+                            href={`mailto:${detail}`}
+                            className="text-gray-600 text-base leading-tight hover:text-emerald-600 transition-colors duration-200 underline"
+                          >
+                            {detail}
+                          </a>
+                        )
+                      } else {
+                        return (
+                          <p key={detailIndex} className="text-gray-600 text-base leading-tight">
+                            {detail}
+                          </p>
+                        )
+                      }
+                    })
+                  )}
                 </div>
               ))}
             </div>
