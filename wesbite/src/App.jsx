@@ -6,11 +6,13 @@ import { Registration } from './components/registration'
 import { Contact } from './components/contact'
 import { Footer } from './components/footer'
 import { ThemeProvider } from './components/theme-provider'
+import { SEO } from './components/seo'
 import './App.css'
 
 function App() {
   return (
     <ThemeProvider>
+      <SEO />
       <div className="min-h-screen bg-white">
         <Header />
         <main>
