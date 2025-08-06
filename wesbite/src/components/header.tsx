@@ -2,16 +2,54 @@ import { useState } from "react"
 import { Menu, X, GraduationCap } from "lucide-react"
 import { Button } from "./ui/button"
 import React from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import "./header.css"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+    if (location.pathname !== "/") {
+      // If not on home page, navigate to home first
+      navigate("/")
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    } else {
+      // If already on home page, just scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
     }
+    setIsMenuOpen(false)
+  }
+
+  const isActive = (path: string) => {
+    return location.pathname === path
+  }
+
+  const handleHomeClick = () => {
+    // Navigate to home and scroll to top
+    navigate("/")
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100)
+    setIsMenuOpen(false)
+  }
+
+  const handleInstructorsClick = () => {
+    // Navigate to instructors and scroll to top
+    navigate("/instructors")
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100)
     setIsMenuOpen(false)
   }
 
@@ -21,16 +59,19 @@ export function Header() {
         <div className="header-flex">
           {/* Logo - Far Left */}
           <div className="logo-container">
-            <div className="logo-icon">
-              <GraduationCap className="h-6 w-6 text-emerald-600" style={{ height: '1.5rem', width: '1.5rem', color: '#059669' }} />
-            </div>
-            <span className="logo-text">GREAT</span>
+            <Link to="/" className="flex items-center" onClick={handleHomeClick}>
+              <div className="logo-icon">
+                <GraduationCap className="h-6 w-6 text-emerald-600" style={{ height: '1.5rem', width: '1.5rem', color: '#059669' }} />
+              </div>
+              <span className="logo-text">GREAT</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation - Center */}
           <nav className="desktop-nav">
             <button
-              onClick={() => scrollToSection("home")}
+              onClick={handleHomeClick}
+              className={isActive("/") ? "active" : ""}
             >
               Home
             </button>
@@ -53,6 +94,12 @@ export function Header() {
               onClick={() => scrollToSection("contact")}
             >
               Contact
+            </button>
+            <button
+              onClick={handleInstructorsClick}
+              className={isActive("/instructors") ? "active" : ""}
+            >
+              Instructors
             </button>
           </nav>
 
@@ -80,7 +127,8 @@ export function Header() {
           <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
             <div className="mobile-nav-content">
               <button
-                onClick={() => scrollToSection("home")}
+                onClick={handleHomeClick}
+                className={isActive("/") ? "active" : ""}
               >
                 Home
               </button>
@@ -103,6 +151,12 @@ export function Header() {
                 onClick={() => scrollToSection("contact")}
               >
                 Contact
+              </button>
+              <button
+                onClick={handleInstructorsClick}
+                className={isActive("/instructors") ? "active" : ""}
+              >
+                Instructors
               </button>
               <div className="mobile-cta">
                 <Button

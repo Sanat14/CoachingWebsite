@@ -32,6 +32,13 @@
   gap: 0.75rem;
 }
 
+.logo-container a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo-icon {
   display: flex;
   align-items: center;
@@ -56,7 +63,8 @@
   margin-right: auto;
 }
 
-.desktop-nav button {
+.desktop-nav button,
+.desktop-nav a {
   color: #374151;
   font-weight: 500;
   font-size: 1rem;
@@ -64,10 +72,18 @@
   background: none;
   border: none;
   padding: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.desktop-nav button:hover {
+.desktop-nav button:hover,
+.desktop-nav a:hover {
   color: #059669;
+}
+
+.desktop-nav a.active {
+  color: #059669;
+  font-weight: 600;
 }
 
 .desktop-cta {
@@ -125,7 +141,8 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.mobile-nav button {
+.mobile-nav button,
+.mobile-nav a {
   display: block;
   padding: 0.75rem 1rem;
   color: #374151;
@@ -137,11 +154,20 @@
   cursor: pointer;
   background: none;
   border: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.mobile-nav button:hover {
+.mobile-nav button:hover,
+.mobile-nav a:hover {
   color: #059669;
   background-color: #f9fafb;
+}
+
+.mobile-nav a.active {
+  color: #059669;
+  background-color: #f0fdf4;
+  font-weight: 600;
 }
 
 .mobile-cta {
@@ -163,6 +189,11 @@
 .mobile-cta button:hover {
   background-color: #047857;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility classes for conditional display */
+.hidden {
+  display: none !important;
 }
 
 /* Media Queries for Responsive Design */

@@ -2,12 +2,29 @@
 
 import { GraduationCap, MapPin, Clock } from "lucide-react"
 import React from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 
 export function Footer() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+    if (location.pathname !== "/") {
+      // If not on home page, navigate to home first
+      navigate("/")
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    } else {
+      // If already on home page, just scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
     }
   }
 
