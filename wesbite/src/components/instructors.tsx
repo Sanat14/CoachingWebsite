@@ -41,12 +41,12 @@ const instructors: Instructor[] = [
     id: "febi",
     name: "Febi",
     role: "Math, Physics & Chemistry Instructor",
-    description: "Febi is an experienced educator who teaches Math, Physics, and Chemistry to students of all age groups, with particular expertise in supporting older students. He is skilled at breaking down complex concepts and adapting his teaching style to meet the needs of each learner, ensuring academic success at every level.",
+    description: "Febi is an experienced educator who teaches Math, Physics, and Chemistry to students of all age groups. He is skilled at breaking down complex concepts and adapting his teaching style to meet the needs of each learner, ensuring academic success at every level. Febi demonstrates creativity, leadership, and effective communication, having developed interactive curriculums and implemented digital tools to enhance learning.",
     imageUrl: "/instructors/febi.jpg", // Placeholder - you'll add actual image
     specialties: [
       "Math for All Ages",
       "Physics & Chemistry",
-      "Advanced Tutoring for Older Students"
+      "Advanced Tutoring & Concept Mastery"
     ]
   }
 ]
@@ -148,7 +148,7 @@ export function Instructors() {
               <div className="flex justify-center">
                 <button 
                   onClick={handleContactClick}
-                  className="px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  className="px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg transition-colors duration-200 hover:bg-emerald-50 hover:shadow-md cursor-pointer"
                 >
                   Contact
                 </button>

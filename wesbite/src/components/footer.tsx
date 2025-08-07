@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="text-gray-400 hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Home
                 </button>
@@ -58,7 +58,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="text-gray-400 hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   About Us
                 </button>
@@ -66,7 +66,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="text-gray-400 hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Services
                 </button>
@@ -74,7 +74,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("register")}
-                  className="text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="text-gray-400 hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Register
                 </button>
