@@ -20,6 +20,9 @@ export function Hero() {
                 Unlock Your
                 <span className="text-emerald-600 block">Academic Potential</span>
               </h1>
+              <p className="text-lg text-emerald-700 font-medium italic">
+                GREAT Coaching - Galway Regional Education and Tutorial Centre
+              </p>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Join GREAT Coaching Center and excel in Mathematics, Science (Physics & Chemistry), Irish and English with personalized learning,
                 comprehensive worksheets, and regular assessments for all age groups.

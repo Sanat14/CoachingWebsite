@@ -6,22 +6,22 @@ export function About() {
     {
       icon: <CheckCircle className="h-8 w-8 text-emerald-600" />,
       title: "Comprehensive Curriculum",
-      description: "Complete Math, English, Science and Irish programs designed for all age groups and skill levels.",
+      description: "Complete Math, English, Science and Irish programs designed for all age groups and skill levels, following the Irish education curriculum.",
     },
     {
       icon: <Award className="h-8 w-8 text-emerald-600" />,
       title: "Quality Worksheets",
-      description: "Carefully crafted worksheets that reinforce learning and build strong foundations.",
+      description: "Carefully crafted worksheets that reinforce learning and build strong foundations for academic success.",
     },
     {
       icon: <Target className="h-8 w-8 text-emerald-600" />,
       title: "Regular Assessments",
-      description: "Topic-wise tests to track progress and identify areas for improvement.",
+      description: "Topic-wise tests to track progress and identify areas for improvement, ensuring students meet Irish education standards.",
     },
     {
       icon: <Heart className="h-8 w-8 text-emerald-600" />,
       title: "Personalized Attention",
-      description: "Individual focus to ensure every student reaches their full potential.",
+      description: "Individual focus to ensure every student reaches their full potential in the Irish education system.",
     },
   ]
 
@@ -29,7 +29,7 @@ export function About() {
     <section id="about" className="py-20 bg-gradient-to-br from-white to-emerald-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About GREAT Coaching Center</h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About GREAT Coaching - Galway Regional Education and Tutorial Centre</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are dedicated to providing exceptional education in Mathematics, English, Science (Physics & Chemistry) and Irish, helping students of all ages
             achieve academic excellence through proven teaching methods.
@@ -67,7 +67,7 @@ export function About() {
             <div className="bg-gradient-to-br from-emerald-100 to-teal-100 p-4 rounded-2xl max-w-md mx-auto">
               <img
                 src="/TeacherHelp.jpg"
-                alt="Teacher helping students"
+                alt="GREAT Coaching tutors helping students with their studies"
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
               />
             </div>
@@ -81,7 +81,7 @@ export function About() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-gray-700 font-medium leading-relaxed">
-                    <strong>Expert Teachers:</strong> Qualified instructors with years of experience in Math, English, Science, and Irish education.
+                    <strong>Expert Teachers:</strong> Qualified instructors with years of experience in Math, English, Science, and Irish education, serving students in our local community.
                   </p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export function About() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-gray-700 font-medium leading-relaxed">
-                    <strong>Proven Methods:</strong> Time-tested teaching techniques that ensure concept clarity and retention.
+                    <strong>Proven Methods:</strong> Time-tested teaching techniques that ensure concept clarity and retention, aligned with Irish education standards.
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function About() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-gray-700 font-medium leading-relaxed">
-                    <strong>Flexible Learning:</strong> Programs tailored for different age groups and learning paces.
+                    <strong>Flexible Learning:</strong> Programs tailored for different age groups and learning paces, accommodating busy family schedules.
                   </p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export function About() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-gray-700 font-medium leading-relaxed">
-                    <strong>Progress Tracking:</strong> Regular tests and feedback to monitor student development.
+                    <strong>Progress Tracking:</strong> Regular tests and feedback to monitor student development, ensuring students meet their academic goals.
                   </p>
                 </div>
               </div>
